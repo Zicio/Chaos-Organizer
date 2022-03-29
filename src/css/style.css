@@ -1,0 +1,100 @@
+html {
+  background: linear-gradient(rgba(255, 0, 76, 0.609), transparent 1px), linear-gradient(90deg, rgba(255, 0, 76, 0.609), transparent 1px);
+  background-size: 20px 20px;
+  background-color: black;
+  font-size: 20px;
+  background-position: center center;
+  font-family: sans-serif;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  background-color: rgba(6, 58, 32, 0.603);
+  z-index: 1;
+  left: 50%;
+  top: 30%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 50%;
+  border: 3px solid rgba(255, 0, 76, 0.609);
+  padding: 2%;
+  border-radius: 15px;
+  min-width: 270px;
+  color: rgba(3, 230, 52, 0.945);
+}
+
+.popup .popup__form .password {
+  margin-top: 30px;
+}
+
+.popup .popup__form .group__label {
+  text-align: center;
+  font-weight: normal;
+  margin: 0 auto;
+  display: block;
+}
+
+.popup .popup__form .group__field {
+  border: 2px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 20px;
+  font-family: inherit;
+}
+
+.popup .popup__form .group__field:invalid {
+  border-color: #900;
+}
+
+.popup .popup__form .group__field:focus:invalid, .popup .popup__form .group__field:focus:valid {
+  border-color: black;
+}
+
+.popup .popup__form .group__field:valid {
+  border-color: #1ec518;
+}
+
+.popup .popup__form .form__hint {
+  display: none;
+  color: red;
+}
+
+.popup .popup__form .form__submit {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 15px 25px;
+  background-color: white;
+  margin: 20px auto 0;
+  width: 70%;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 40px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.popup .popup__form .form__submit:hover {
+  background-color: yellow;
+}
+
+.chat {
+  padding: 20px;
+}
+
+.chat__container {
+  display: none;
+  min-width: 300px;
+}
+
+.active {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

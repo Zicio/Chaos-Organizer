@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaos Organizer</title>
+</head>
+<body>
+  <div class="popup active">
+    <form class="popup__form">
+      <div class="form__group nickname">
+        <label class="group__label" for="name">Введите ваш никнейм</label>
+        <input class="group__field" id="name" type="text" name="name" minlength="3"
+        required>
+      </div>
+      <div class="form__group password">
+        <label class="group__label" for="password">Введите ваш пароль</label>
+        <input class="group__field" id="password" type="text" name="password" minlength="6" required>
+      </div>
+      <div class="form__hint"></div>
+      <button type="submit" class="form__submit">Войти</button>
+    </form>
+  </div>
+  <main class="chat">
+    <div class="chat__container">
+      <ul class="chat__list">
+      </ul>
+      <div class="chat__window">
+        <div class="chat__tape"></div>
+        <form class="chat__form">
+          <input type="text" class="chat__field" name="message" placeholder="Type your message here">
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
