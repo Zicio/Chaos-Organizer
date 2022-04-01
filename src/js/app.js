@@ -23,7 +23,7 @@ export default class App {
     const first = [...e.target.elements].find((o) => !o.validity.valid);
     if (!first) {
       const user = {
-        name: e.target.elements[0].value,
+        nickname: e.target.elements[0].value,
         password: e.target.elements[1].value,
       };
       const result = await Request.post(this.url, user);
