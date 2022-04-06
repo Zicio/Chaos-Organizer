@@ -29,8 +29,9 @@
     </div>
     <div class="chat__window">
       <div class="chat__tape"></div>
-      <form class="chat__form">
-        <input type="text" class="chat__field" name="message" placeholder="Type your message here">
+      <form class="chat__form" id="message">
+        <textarea class="chat__field" form="message" rows="3" maxlength="300" placeholder="Type your message here"></textarea>
+        <button type="submit" class="chat__submit">Отправить</button>
       </form>
     </div>
   </main>
