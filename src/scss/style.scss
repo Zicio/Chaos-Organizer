@@ -26,7 +26,6 @@ html {
 // Structure Styles
 
 .popup {
-  display: none;
   position: fixed;
   @extend %box;
   z-index: 1;
@@ -97,6 +96,36 @@ html {
     .form__submit:hover {
       background-color:yellow;
     }
+  }
+}
+
+.welcome {
+  position: absolute; 
+  width: 100%;
+  top: 25%;
+  height: 50%;
+}
+
+.active {
+  text-transform: uppercase;
+  animation: stroke 5s 1s alternate;
+  font-size: $size;
+  stroke-width: 2;
+  stroke: $red;
+  opacity: 0;
+}
+@keyframes stroke {
+  0%   {
+    opacity: 0;
+    fill: $acid-green; stroke: $red;
+    stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+  }
+  70%  {fill:  $acid-green; stroke: $red; }
+  80%  {opacity: 0.8; fill:  $acid-green; stroke: $red; stroke-width: 3; }
+  100% {
+    opacity: 0;
+    fill: $red; stroke:  $acid-green; 
+    stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
   }
 }
 
@@ -240,6 +269,9 @@ html {
 //     padding: 10px;
 // }
 
-.active {
-    display: block;
+.close {
+  transition-property: opacity, height;
+  transition-duration: 1.5s, 0s;
+  transition-delay: 0s, 1.5s;
+  opacity: 0;
 }

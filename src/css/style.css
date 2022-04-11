@@ -13,7 +13,6 @@ html {
 }
 
 .popup {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 50%;
@@ -80,6 +79,81 @@ html {
 
 .popup .popup__form .form__submit:hover {
   background-color: yellow;
+}
+
+.welcome {
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  height: 50%;
+}
+
+.active {
+  text-transform: uppercase;
+  -webkit-animation: stroke 5s 1s alternate;
+          animation: stroke 5s 1s alternate;
+  font-size: 25px;
+  stroke-width: 2;
+  stroke: rgba(255, 0, 76, 0.609);
+  opacity: 0;
+}
+
+@-webkit-keyframes stroke {
+  0% {
+    opacity: 0;
+    fill: rgba(3, 230, 52, 0.945);
+    stroke: rgba(255, 0, 76, 0.609);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(3, 230, 52, 0.945);
+    stroke: rgba(255, 0, 76, 0.609);
+  }
+  80% {
+    opacity: 0.8;
+    fill: rgba(3, 230, 52, 0.945);
+    stroke: rgba(255, 0, 76, 0.609);
+    stroke-width: 3;
+  }
+  100% {
+    opacity: 0;
+    fill: rgba(255, 0, 76, 0.609);
+    stroke: rgba(3, 230, 52, 0.945);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+@keyframes stroke {
+  0% {
+    opacity: 0;
+    fill: rgba(3, 230, 52, 0.945);
+    stroke: rgba(255, 0, 76, 0.609);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(3, 230, 52, 0.945);
+    stroke: rgba(255, 0, 76, 0.609);
+  }
+  80% {
+    opacity: 0.8;
+    fill: rgba(3, 230, 52, 0.945);
+    stroke: rgba(255, 0, 76, 0.609);
+    stroke-width: 3;
+  }
+  100% {
+    opacity: 0;
+    fill: rgba(255, 0, 76, 0.609);
+    stroke: rgba(3, 230, 52, 0.945);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
 }
 
 .chat {
@@ -174,7 +248,13 @@ html {
   background-color: yellow;
 }
 
-.active {
-  display: block;
+.close {
+  -webkit-transition-property: opacity, height;
+  transition-property: opacity, height;
+  -webkit-transition-duration: 1.5s, 0s;
+          transition-duration: 1.5s, 0s;
+  -webkit-transition-delay: 0s, 1.5s;
+          transition-delay: 0s, 1.5s;
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

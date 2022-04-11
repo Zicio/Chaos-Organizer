@@ -1,4 +1,5 @@
 import Request from './request';
+import Dom from './dom';
 
 export default class App {
   constructor(element) {
@@ -28,6 +29,9 @@ export default class App {
       };
       const result = await Request.post(this.url, user);
       console.log('RES ', result);
+      if (result) {
+        Dom.showPopup(e.target.elements[0].value);
+      }
     }
   }
 }
