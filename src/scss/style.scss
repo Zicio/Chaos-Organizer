@@ -2,7 +2,10 @@ $red: rgba(255, 0, 76, 0.609);
 $green: rgba(6, 58, 32, 0.603);
 $acid-green: rgba(3, 230, 52, 0.945);
 $blue-form: #194dfd69;
+$gray-submit: rgba(255, 255, 255, 0.681);
 $radius: 15px;
+$size-form: 20px;
+$size: 25px;
 
 %box {
   border: 3px solid $red;
@@ -33,6 +36,7 @@ html {
   width: 50%;
   padding: 2%;
   min-width: 270px;
+  font-size: $size;
   color: $acid-green;
 
   .popup__form {
@@ -46,14 +50,13 @@ html {
       margin: 0 auto;
       display: block;
       margin-bottom: 20px;
-      font-size: 23px;
     }
 
     .group__field {
       all: unset;
       box-sizing: border-box;
       width: 100%;
-      font-size: 15px;
+      font-size: $size-form;
       padding: 10px;
       border-radius: $radius;
       background-color: $blue-form;
@@ -80,10 +83,10 @@ html {
       display: block;
       border: 1px solid black;
       border-radius: $radius;
-      background-color:rgba(255, 255, 255, 0.681);
+      background-color:$gray-submit;
       margin: 20px auto 0;
       width: 50%;
-      height: 40px;
+      height: 50px;
       box-sizing: border-box;
       padding: 5px 40px;
       text-align: center;
@@ -103,6 +106,7 @@ html {
     @extend %box;
     margin: 30px;
     min-width: 350px;
+    font-size: $size;
     display: none;
 
     .chat__users {
@@ -134,8 +138,6 @@ html {
         width: 100%;
         display: grid;
         grid-template-columns: 5fr 1fr;
-        background-color: $blue-form;
-        border-radius: 0 0 15px 0;
 
         .chat__field {
           border: none;
@@ -144,7 +146,8 @@ html {
           outline: none;
           box-sizing: border-box;
           width: 100%;
-          font-size: 15px;
+          font-size: $size-form;
+          background-color: $blue-form;
           padding: 10px;
           color: $acid-green;
           font-family: cursive;
@@ -169,7 +172,8 @@ html {
           all: unset;
           cursor: pointer;
           padding: 15px 25px;
-          background-color:rgba(255, 255, 255, 0.396);
+          border-radius: 0 0 11px 0;
+          background-color:$gray-submit;
           text-align: center;
           color: red;
           font-weight: bold;
