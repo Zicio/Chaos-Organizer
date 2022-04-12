@@ -30,7 +30,8 @@ export default class App {
       const result = await Request.post(this.url, user);
       console.log('RES ', result);
       if (result) {
-        Dom.showPopup(e.target.elements[0].value);
+        Dom.start(e.target.elements[0].value);
+
       }
     }
   }

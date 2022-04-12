@@ -1,7 +1,6 @@
 .popup, .chat {
   border: 3px solid rgba(255, 0, 76, 0.609);
   border-radius: 15px;
-  background-color: rgba(6, 58, 32, 0.603);
 }
 
 html {
@@ -24,6 +23,7 @@ html {
   min-width: 270px;
   font-size: 25px;
   color: rgba(3, 230, 52, 0.945);
+  background-color: rgba(6, 58, 32, 0.603);
 }
 
 .popup .popup__form .password {
@@ -46,7 +46,7 @@ html {
   font-size: 20px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #194dfd69;
+  background-color: rgba(0, 0, 0, 0.913);
   border: 2px solid black;
 }
 
@@ -57,6 +57,12 @@ html {
 
 .popup .popup__form .group__field:valid {
   border-color: rgba(3, 230, 52, 0.945);
+}
+
+.popup .popup__form .group__field:-webkit-autofill,
+.popup .popup__form .group__field:-webkit-autofill:focus {
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
 
 .popup .popup__form .form__submit {
@@ -157,19 +163,19 @@ html {
 }
 
 .chat {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
   margin: 30px;
   min-width: 350px;
   font-size: 25px;
+  overflow: auto;
   display: none;
 }
 
 .chat .chat__users {
   border-right: 3px solid rgba(255, 0, 76, 0.609);
   padding: 20px;
+  background-color: rgba(6, 58, 32, 0.603);
 }
 
 .chat .chat__users .users__title {
@@ -181,6 +187,12 @@ html {
 
 .chat .chat__users .users__list {
   list-style-type: none;
+  padding: 0;
+}
+
+.chat .chat__users .users__list .list__card {
+  color: rgba(255, 0, 76, 0.609);
+  text-align: center;
 }
 
 .chat .chat__window {
@@ -188,6 +200,7 @@ html {
   display: grid;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
+  background-color: rgba(0, 0, 0, 0.913);
 }
 
 .chat .chat__window .chat__tape {
@@ -195,12 +208,12 @@ html {
 }
 
 .chat .chat__window .chat__form {
-  border-top: 3px solid rgba(255, 0, 76, 0.609);
-  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5fr 1fr;
       grid-template-columns: 5fr 1fr;
+  background-color: rgba(6, 58, 32, 0.603);
+  border-top: 3px solid rgba(255, 0, 76, 0.609);
 }
 
 .chat .chat__window .chat__form .chat__field {
@@ -212,7 +225,6 @@ html {
           box-sizing: border-box;
   width: 100%;
   font-size: 20px;
-  background-color: #194dfd69;
   padding: 10px;
   color: rgba(3, 230, 52, 0.945);
   font-family: cursive;
@@ -236,16 +248,16 @@ html {
 .chat .chat__window .chat__form .chat__submit {
   all: unset;
   cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 15px 25px;
-  border-radius: 0 0 11px 0;
-  background-color: rgba(255, 255, 255, 0.681);
   text-align: center;
   color: red;
   font-weight: bold;
 }
 
 .chat .chat__window .chat__form .chat__submit:hover {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.561);
 }
 
 .close {

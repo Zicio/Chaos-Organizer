@@ -1,16 +1,16 @@
 $red: rgba(255, 0, 76, 0.609);
 $green: rgba(6, 58, 32, 0.603);
 $acid-green: rgba(3, 230, 52, 0.945);
-$blue-form: #194dfd69;
 $gray-submit: rgba(255, 255, 255, 0.681);
+$black-messages: rgba(0, 0, 0, 0.913);
 $radius: 15px;
 $size-form: 20px;
 $size: 25px;
+$border: 3px solid $red;
 
 %box {
-  border: 3px solid $red;
+  border: $border;
   border-radius: $radius;
-  background-color: $green;
 }
 
 html {
@@ -37,6 +37,7 @@ html {
   min-width: 270px;
   font-size: $size;
   color: $acid-green;
+  background-color: $green;
 
   .popup__form {
     .password {
@@ -58,7 +59,7 @@ html {
       font-size: $size-form;
       padding: 10px;
       border-radius: $radius;
-      background-color: $blue-form;
+      background-color: $black-messages;
       border: 2px solid black;
     }
     
@@ -70,6 +71,12 @@ html {
     .group__field:valid {
       border-color: $acid-green;
     }
+
+    .group__field:-webkit-autofill,
+    .group__field:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;  //Исключаю автостиль при автозаполнении (костыль, не знаю как еще)
+    }
+
   
     // .form__hint {
     //   display: none;
@@ -130,17 +137,18 @@ html {
 }
 
 .chat {
-    display: grid;
     grid-template-columns: 1fr 3fr;
     @extend %box;
     margin: 30px;
     min-width: 350px;
     font-size: $size;
+    overflow: auto;
     display: none;
 
     .chat__users {
-      border-right: 3px solid $red;
+      border-right: $border;
       padding: 20px;
+      background-color: $green;
 
       .users__title {
         color: $acid-green;
@@ -151,22 +159,29 @@ html {
 
       .users__list {
         list-style-type: none;
+        padding: 0;
+
+        .list__card {
+          color: $red;
+          text-align: center;
+        }
       }
     }
 
     .chat__window {
       display: grid;
       grid-template-rows: 5fr 1fr;
+      background-color: $black-messages;
 
       .chat__tape {
         padding: 20px;
       }
 
       .chat__form {
-        border-top: 3px solid $red;
-        width: 100%;
         display: grid;
         grid-template-columns: 5fr 1fr;
+        background-color: $green;
+        border-top: $border;
 
         .chat__field {
           border: none;
@@ -176,7 +191,6 @@ html {
           box-sizing: border-box;
           width: 100%;
           font-size: $size-form;
-          background-color: $blue-form;
           padding: 10px;
           color: $acid-green;
           font-family: cursive;
@@ -200,16 +214,15 @@ html {
         .chat__submit {
           all: unset;
           cursor: pointer;
+          box-sizing: border-box;
           padding: 15px 25px;
-          border-radius: 0 0 11px 0;
-          background-color:$gray-submit;
           text-align: center;
           color: red;
           font-weight: bold;
         }
 
         .chat__submit:hover {
-          background-color:yellow;
+          background-color:rgba(255, 255, 0, 0.561);
         }
       }
     }
