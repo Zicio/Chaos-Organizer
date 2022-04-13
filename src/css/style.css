@@ -57,6 +57,7 @@ html {
 
 .popup .popup__form .group__field:valid {
   border-color: rgba(3, 230, 52, 0.945);
+  color: rgba(3, 230, 52, 0.945);
 }
 
 .popup .popup__form .group__field:-webkit-autofill,

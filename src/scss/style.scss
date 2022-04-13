@@ -70,6 +70,7 @@ html {
     
     .group__field:valid {
       border-color: $acid-green;
+      color: $acid-green;
     }
 
     .group__field:-webkit-autofill,
