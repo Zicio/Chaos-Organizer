@@ -25,9 +25,33 @@ export default class Dom {
     });
     const list = chat.querySelector('.users__list');
     const user = document.createElement('li');
-    user.classList.add('list__card');
+    user.classList.add('list__card', 'you');
     user.textContent = '✯You';
     list.append(user);
+  }
+
+  static showMessages(messages, yourName) {
+    const chatTape = document.querySelector('.chat__tape');
+    for (const msg of messages) {
+      const newMessage = Dom.setEl('li', 'chat__message');
+      chatTape.appendChild(newMessage);
+      const messageInfo = Dom.setEl('span', 'message__info');
+      const you = document.querySelector('.you');
+      if (msg.name === yourName) {
+        messageInfo.textContent = 'You';
+        messageInfo.dataset.myName = yourName;
+      } else {
+        messageInfo.textContent = msg.name;
+      }
+      // if (msg.name.includes(you.dataset.myName, 0)) {
+      //   newMessage.classList.add('your-message');
+      //   messageInfo.textContent = messageInfo.textContent.replace(you.dataset.myName, 'You');
+      // }
+      const messageText = Dom.setEl('span', 'message__text');
+      messageText.textContent = `${msg.date} ${msg.text}`;
+      newMessage.appendChild(messageInfo);
+      newMessage.appendChild(messageText);
+    }
   }
 
   static showHint(text) {

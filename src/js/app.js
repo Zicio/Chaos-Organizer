@@ -4,7 +4,7 @@ import Dom from './dom';
 export default class App {
   constructor(element) {
     this.element = element;
-    this.url = new URL('http://localhost:7000/'); // 'https://zicio-chat0.herokuapp.com/'
+    this.request = new Request();
 
     this.login();
   }
@@ -27,10 +27,12 @@ export default class App {
         nickname: e.target.elements[0].value,
         password: e.target.elements[1].value,
       };
-      const result = await Request.post(this.url, user);
-      if (result === true) {
+      const result = await this.request.post(user);
+      if (typeof result === 'object') {
         Dom.showHint();
         Dom.start(e.target.elements[0].value);
+        Dom.showMessages(result, e.target.elements[0].value);
+        // this.request.getWS();
       } else {
         Dom.showHint(result);
       }
