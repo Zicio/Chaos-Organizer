@@ -13,12 +13,13 @@ export default class Dom {
     const welcomeText = welcome.querySelector('tspan');
     const chat = document.querySelector('.chat');
     welcomeText.textContent = name;
-    welcome.classList.add('active');
-    Dom.showChat(welcome, chat, name);
+    welcome.classList.add('start');
+    Dom.showChat(welcome, chat);
   }
 
   static showChat(welcome, chat) {
     welcome.addEventListener('animationend', () => {
+      welcome.classList.remove('start');
       welcome.style.display = 'none';
       chat.style.display = 'grid';
     });
@@ -27,5 +28,21 @@ export default class Dom {
     user.classList.add('list__card');
     user.textContent = '✯You';
     list.append(user);
+  }
+
+  static showHint(text) {
+    const hint = document.querySelector('.form__hint');
+    if (text) {
+      hint.textContent = text;
+      hint.style.display = 'block';
+      return;
+    }
+    hint.style.display = null;
+  }
+
+  static setEl(type, ...selector) {
+    const el = document.createElement(type);
+    el.classList.add(...selector);
+    return el;
   }
 }

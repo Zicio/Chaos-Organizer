@@ -1,4 +1,4 @@
-.popup, .chat {
+.popup, .popup .popup__form .form__hint, .chat {
   border: 3px solid rgba(255, 0, 76, 0.609);
   border-radius: 15px;
 }
@@ -88,6 +88,15 @@ html {
   background-color: yellow;
 }
 
+.popup .popup__form .form__hint {
+  display: none;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.681);
+}
+
 .welcome {
   position: absolute;
   width: 100%;
@@ -95,7 +104,7 @@ html {
   height: 50%;
 }
 
-.active {
+.start {
   text-transform: uppercase;
   -webkit-animation: stroke 5s 1s alternate;
           animation: stroke 5s 1s alternate;

@@ -78,12 +78,6 @@ html {
       transition: background-color 600000s 0s, color 600000s 0s;  //Исключаю автостиль при автозаполнении (костыль, не знаю как еще)
     }
 
-  
-    // .form__hint {
-    //   display: none;
-    //   color: red;
-    // }
-  
     .form__submit {
       all: unset;
       cursor: pointer;
@@ -104,6 +98,16 @@ html {
     .form__submit:hover {
       background-color:yellow;
     }
+
+    .form__hint {
+      display: none;
+      color: red;
+      @extend %box;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 15px;
+      background-color: $gray-submit;
+    }
   }
 }
 
@@ -114,7 +118,7 @@ html {
   height: 50%;
 }
 
-.active {
+.start {
   text-transform: uppercase;
   animation: stroke 5s 1s alternate;
   font-size: $size;

@@ -28,10 +28,11 @@ export default class App {
         password: e.target.elements[1].value,
       };
       const result = await Request.post(this.url, user);
-      console.log('RES ', result);
-      if (result) {
+      if (result === true) {
+        Dom.showHint();
         Dom.start(e.target.elements[0].value);
-
+      } else {
+        Dom.showHint(result);
       }
     }
   }
